@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Theme palettes.
+ * The UI was authored with dark-theme Tailwind classes; the palettes below
+ * are wired to CSS variables (see tailwind.config.js) so `slate-*` and the
+ * accent shades render correctly in both themes.
+ * :root      -> light theme (default)
+ * .dark      -> original dark theme
+ */
+:root {
+  /* slate: page #f8fafc-ish surfaces, white cards, dark text */
+  --slate-50: 2 6 23;
+  --slate-100: 15 23 42;
+  --slate-200: 30 41 59;
+  --slate-300: 51 65 85;
+  --slate-400: 71 85 105;
+  --slate-500: 100 116 139;
+  --slate-600: 100 116 139;
+  --slate-700: 203 213 225;
+  --slate-800: 226 232 240;
+  --slate-900: 255 255 255;
+  --slate-950: 241 245 249;
+
+  /* accent text shades darkened for contrast on light backgrounds */
+  --indigo-100: 55 48 163;
+  --indigo-300: 79 70 229;
+  --indigo-400: 67 56 202;
+  --amber-300: 180 83 9;
+  --amber-400: 217 119 6;
+  --emerald-300: 6 95 70;
+  --emerald-400: 4 120 87;
+  --sky-400: 3 105 161;
+  --rose-300: 159 18 57;
+  --rose-400: 190 18 60;
+  --orange-400: 194 65 12;
+
+  color-scheme: light;
+}
+
+.dark {
+  /* original Tailwind slate palette */
+  --slate-50: 248 250 252;
+  --slate-100: 241 245 249;
+  --slate-200: 226 232 240;
+  --slate-300: 203 213 225;
+  --slate-400: 148 163 184;
+  --slate-500: 100 116 139;
+  --slate-600: 71 85 105;
+  --slate-700: 51 65 85;
+  --slate-800: 30 41 59;
+  --slate-900: 15 23 42;
+  --slate-950: 2 6 23;
+
+  /* original Tailwind accent shades */
+  --indigo-100: 224 231 255;
+  --indigo-300: 165 180 252;
+  --indigo-400: 129 140 248;
+  --amber-300: 252 211 77;
+  --amber-400: 251 191 36;
+  --emerald-300: 110 231 183;
+  --emerald-400: 52 211 153;
+  --sky-400: 56 189 248;
+  --rose-300: 253 164 175;
+  --rose-400: 251 113 133;
+  --orange-400: 251 146 60;
+
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-100 font-sans antialiased;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
